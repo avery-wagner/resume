@@ -6,3 +6,5 @@
 *.synctex.gz
 *.toc
 *.xmpi
+missfont.log
+creationdate.lua

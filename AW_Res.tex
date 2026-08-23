@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Avery Wagner Resume — November 2025
+%
+% To compile:
+%   1. Open Overleaf (https://www.overleaf.com/)
+%   2. Create a New Project → Blank Project → paste this file
+%   3. Click “Menu” → change paper size to “Letter”
+%   4. Recompile — fonts and colors load automatically
+%
+% To adjust colors:
+%   - Main headers: change HEX in \definecolor{heading}
+%   - Subheaders: change HEX in \definecolor{subheading}
+%
+% To adjust fonts:
+%   - Headers: Montserrat
+%   - Body: Lato (both are built into Overleaf)
+%
+% Notes:
+%   - The paracol environment controls left/right column content.
+%   - Keep ATS readability by maintaining section order as is.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{fixed}{fontawesome5}
+\documentclass[10pt,letterpaper,ragged2e,withhyper]{altacv}
+
+\geometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm,columnsep=1.2cm}
+
+% Fonts
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Colors
+\definecolor{heading}{HTML}{404568}
+\definecolor{subheading}{HTML}{5D6DE2}
+\definecolor{accent}{HTML}{5D6DE2}
+\colorlet{name}{heading}
+\colorlet{headingrule}{accent}
+\colorlet{emphasis}{heading}
+\colorlet{body}{black}
+
+% Icons (options passed via \PassOptionsToPackage above; altacv loads fontawesome5)
+\usepackage{paracol}
+
+% \headingfont is not defined in altacv v1.7+; define it here
+\newcommand{\headingfont}{\bfseries}
+\newsavebox{\cvsectiontitlebox}
+\renewcommand{\namefont}{\bfseries\fontsize{20}{30}\selectfont}
+
+
+
+% ----- CUSTOM SECTION HEADER SIZE -----
+\newcommand{\cvsectionfontsize}{\bfseries\fontsize{16}{18}\selectfont}
+\newcommand{\cvsubsectionfontsize}{\fontsize{11}{12}\selectfont}
+
+\renewcommand{\cvsectionfont}{\cvsectionfontsize\bfseries\color{heading}}
+\renewcommand{\cvsubsectionfont}{\cvsubsectionfontsize\color{subheading}}
+
+\newcommand{\experience}[4]{
+  % #1 = Title
+  % #2 = Dates
+  % #3 = Company
+  % #4 = Location
+  % \vspace{6pt}  % spacing before header
+  \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm} \emph{(#2)}\\
+  {\MakeUppercase{#3}} \hspace{0.2cm}---\hspace{0.2cm}   #4
+  % \textbf{\MakeUppercase{#1}} --- (#2)\\
+  % \textcolor{subheading}{\textbf{#3}} — #4
+  \vspace{4pt}  % spacing before bullet list
+}
+\newcommand{\education}[4]{
+  % #1 = Title
+  % #2 = Dates
+  % #3 = Degree info
+  % #4 = GPA
+  \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm}#3\hspace{0.2cm}--- \hspace{0.2cm}#4 \hspace{0.2cm}—\hspace{0.2cm}\emph{(#2)}
+  % \vspace{6pt}  % spacing before header
+  % \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm}(#2)\\
+  % \emph{#3} \hspace{0.2cm}—\hspace{0.2cm} \emph{#4}
+  % \textbf{\MakeUppercase{#1}} --- (#2)\\
+  % \textcolor{subheading}{\textbf{#3}} — #4
+  \vspace{4pt}  % spacing before bullet list
+}
+
+% \renewcommand{\cvsectionstyle}[1]{
+%   {\cvsectionfont #1}
+% }
+\begin{document}
+
+% \renewcommand{\cvsection}[1]{%
+%   \vspace{0.4em}
+%   \sbox{\cvsectiontitlebox}{{\headingfont\bfseries\MakeUppercase{#1}}}%
+%   \noindent{\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\hspace{0.2cm}{\color{accent}\rule[0.5ex]{\dimexpr\linewidth-\wd\cvsectiontitlebox-0.2cm\relax}{0.4pt}}%
+%   \par\vspace{0.2em}
+% }
+
+\renewcommand{\cvsection}[1]{%
+  \vspace{0.8em}
+  {\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\\[-2pt]
+    % {\large\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\\[-2pt]
+  {\color{accent}\rule{\linewidth}{0.4pt}}%
+  \vspace{0.4em}
+}
+
+% ------------------ Centered header (manual) ------------------
+% Comment out the default header: % \makecvheader
+
+\begin{center}
+  % Name
+  {\namefont\color{name}\MakeUppercase{Avery Wagner}}\\[4pt]
+
+  % Tagline (adjust size if you changed \tagline font)
+  % {\large\color{body} Computer Science Student \,|\, Software \& Robotics Enthusiast}\\[6pt]
+
+  % Contact row (icons + links). If fontawesome isn't available, remove \fa* and keep plain text.
+  {\small
+    \faEnvelope\ \href{mailto:hi@averywagner.dev}{hi@averywagner.dev} \quad\textbullet\quad
+    \faLinkedin\ \href{https://linkedin.com/in/avery-wagner}{linkedin.com/in/avery-wagner} \quad\textbullet\quad
+    \faGithub\ \href{https://github.com/avery-wagner}{github.com/avery-wagner}
+  }
+\end{center}
+
+% \vspace{0.5em}
+% ---------------------------------------------------------------
+
+%--------------------------------------------------------------------
+% Header
+% --------------------------------------------------------------------
+% \columnratio{0.3}
+
+% Start two-column region
+% \begin{paracol}{2}
+
+% ---------------- LEFT COLUMN ----------------
+% \begin{leftcolumn}
+% \name{Avery Wagner}
+% \end{leftcolumn}
+
+% Switch to the right column
+% \switchcolumn
+% \tagline{Computer Science Student}
+% \personalinfo{
+%   \email{avery.wagner@colorado.edu}
+%   \phone{(720) 990-0375}
+%   \linkedin{linkedin.com/in/avery-wagner}
+%   \github{github.com/avery-wagner}
+% }
+
+
+% \makecvheader
+% End two-column region
+% \end{paracol}
+% SUMMARY
+\cvsection{SUMMARY}
+% \vspace{0.2em}
+Driven, creative, and adaptable student at CU graduating in May 2026 with a BA in Computer Science and a minor in Music. Incoming Robotics Engineering Intern at Lunar Outpost; previously at Axiom Space and Lunar Outpost developing mission-control software solutions. Passionate student of robotics and intelligent systems and experienced in industry-grade full-stack and UI/UX development. Committed advocate for tech ethics, green tech, and building tech for social good. Self-taught graphic designer and an ardent musician and artist. 
+% Driven, creative, and adaptable undergraduate student at CU Boulder pursuing a BA in Computer Science and a minor in Music. Seeking industry experience in robotics and embedded systems. Previous internships at Axiom Space and Lunar Outpost developing mission-control software solutions. Versatile problem-solver with experience in full-stack development, UI/UX, cloud computing, and data visualization. Passionate about robotics, cybersecurity, and operating systems.
+
+
+
+
+% EDUCATION
+% \cvevent{University of Colorado Boulder}{BA in Computer Science, Minor in Music}{Expected May 2026}{GPA: 3.4}
+\cvsection{EDUCATION}
+\education
+  {University of Colorado Boulder}
+  {Graduation May 2026}
+  % {BA in Computer Science, Minor in Music}
+  % {GPA: 3.4}
+  {BA in Computer Science}
+  {Minor in Music}
+  
+Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity, Operating Systems, Algorithms, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
+% Ongoing Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity.\\
+% \vspace{0.2cm}
+% Past Courses: Operating Systems, Algorithms, Discrete Structures, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
+
+%--------------------------------------------------------------------
+% COLUMN SETUP (robust two-column using paracol)
+%--------------------------------------------------------------------
+\vspace{0.3em}
+
+% Set left/right ratio (left = 35% of page)
+\columnratio{0.35}
+
+% Start two-column region
+\begin{paracol}{2}
+
+% ---------------- LEFT COLUMN ----------------
+\begin{leftcolumn}
+
+% SKILLS
+\cvsection{SKILLS}
+\cvsubsection{Programming Languages}
+% \cvsubsection{PROGRAMMING LANGUAGES}
+\cvtag{Python}\cvtag{TS/JS}\cvtag{C/C++}\cvtag{Scala}\cvtag{Julia}\cvtag{Bash}\cvtag{LaTeX}\cvtag{HTML/CSS}
+
+\divider
+
+\cvsubsection{Technologies}
+% \cvsubsection{TECHNOLOGIES}
+\cvtag{ROS2}\cvtag{OpenCV}\cvtag{YOLO}\cvtag{GAZEBO}\cvtag{React.js}\cvtag{Node.js}\cvtag{SQL}\cvtag{Postgres}\cvtag{GitHub}\cvtag{Docker}\cvtag{AWS}
+\cvtag{Linux}\cvtag{Kubernetes}\cvtag{CI/CD}\cvtag{DevOps}
+% \cvtag{Webots}
+
+\divider
+
+\cvsubsection{Design \& Other}
+% \cvsubsection{DESIGN \& OTHER}
+\cvtag{Photoshop}\cvtag{Illustrator}\cvtag{Figma}\cvtag{UI/UX}\cvtag{Excel}\cvtag{Word}\cvtag{PowerPoint}\cvtag{Ableton}
+
+% \divider
+
+% \cvsubsection{Skills in Development}
+% % \cvsubsection{SKILLS IN DEVELOPMENT}
+% \cvtag{GAZEBO}
+
+
+% PROJECTS
+\cvsection{PROJECTS}
+\experience{Expense Share}{Spring 2024}{\faGithub\ \href{https://github.com/avery-wagner/ExpenseShare}{GitHub}}{Team Project}
+\begin{itemize}
+  \item Built a web app to calculate shared expenses using OCR for receipt scanning.
+  \item Managed Agile workflow and SCRUM meetings.
+\end{itemize}
+
+\divider
+
+\experience{Portfolio Site}{Jan 2022}{\faGithub\ \href{https://github.com/avery-wagner/my-portfolio}{GitHub}}{Personal Project}
+\begin{itemize}
+  \item Developed a responsive portfolio using TypeScript and React.
+  \item Deployed with Vercel.
+\end{itemize}
+
+% % REFERENCES
+% \cvsection{REFERENCES}
+% \begin{itemize}
+%   \item Thomas Jones — Axiom Space, UI/UX Manager, \href{mailto:thomasj@axiomspace.com}{thomasj@axiomspace.com}
+%   \item Jonathon McNabb — Lunar Outpost, Ground Software Lead, \href{mailto:jonathon.mcnabb1@gmail.com}{jonathon.mcnabb1@gmail.com}
+%   \item William Johnson — Shop4D, CIO, \href{mailto:will@shop4d.com}{will@shop4d.com}
+% \end{itemize}
+
+\end{leftcolumn}
+
+% Switch to the right column
+\switchcolumn
+
+% ---------------- RIGHT COLUMN ----------------
+
+% % EDUCATION
+% % \cvevent{University of Colorado Boulder}{BA in Computer Science, Minor in Music}{Expected May 2026}{GPA: 3.4}
+% \cvsection{EDUCATION}
+% \education
+%   {University of Colorado Boulder}
+%   {Graduation May 2026}
+%   % {BA in Computer Science, Minor in Music}
+%   % {GPA: 3.4}
+%   {BA in Computer Science}
+%   {Minor in Music}
+% Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity, Operating Systems, Algorithms, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
+% % Ongoing Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity.\\
+% % \vspace{0.2cm}
+% % Past Courses: Operating Systems, Algorithms, Discrete Structures, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
+
+% \divider
+% \vspace{0.8em}
+
+% EXPERIENCE
+\cvsection{WORK EXPERIENCE}
+\experience
+  {Robotics Engineering Intern}
+  {Incoming: Jun 2026 – Aug 2026}
+  {Lunar Outpost}
+  {Golden, CO}
+\begin{itemize}
+  \item Upcoming summer internship focused on software development for the company's various robotic systems.
+\end{itemize}
+
+\divider
+
+\experience
+  {UI/UX Software Engineering Intern}
+  {Jun 2025 – Aug 2025}
+  {Axiom Space}
+  {Houston, TX}
+\begin{itemize}
+  \item Led UI/UX research, design, and dev for a new mission-control app.
+  % \item Acted as primary UX researcher, designer, and developer.
+  \item Created user flows and high-fidelity wireframes in Figma.
+  \item Built a React-based app from these designs.
+\end{itemize}
+
+\divider
+
+\experience
+  {Software Engineering Intern}
+  {Jun 2023 – Aug 2024}
+  {Lunar Outpost}
+  {Golden, CO}
+\begin{itemize}
+  \item Developed features for LO's mission-control software, Stargate.
+  \item Implemented automation tools for dashboards, command dispatch, and log parsing.
+  % \item Worked within a microservice architecture using Kubernetes and AWS.
+  % \item Built extensive unit and integration tests with Jest and Vitest.
+  \item Designed marketing assets in Illustrator and Photoshop.
+\end{itemize}
+
+\vspace{0.8em}
+
+% LEADERSHIP
+\cvsection{LEADERSHIP \& ACTIVITIES}
+\experience
+  {CU Women in Computing}
+  {Aug 2024 - May 2026}
+  {Vice President (2025-2026), Member (2024-2025)}
+  {Boulder, CO}
+\begin{itemize}
+  \item Lead meetings, fundraisers, and professional development events.
+  \item Organized national conference attendance and member engagement for TechCrunch Disrupt 2026 and Harvard WeCode 2026.
+  \item Overhauled the club's branding with a new logo, original merch designs, and a new standalone website.
+\end{itemize}
+
+\divider
+
+\experience
+  {CU Rover Team}
+  {Aug 2025 - May 2026}
+  {Software Engineer}
+  {Boulder, CO}
+\begin{itemize}
+  \item Implemented computer vision and autonomous navigation packages for the team's URC rover using ROS2 and OpenCV.
+  \item Closely collaborated with mechanical and hardware teams for a cohesive system design, testing and integration.
+\end{itemize}
+
+% End two-column region
+\end{paracol}
+
+\end{document}
