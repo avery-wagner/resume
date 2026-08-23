@@ -18,4 +18,4 @@ Built on [AltaCV](https://github.com/liantze/AltaCV) by LianTze Lim.
 latexmk -pdf AW_Res.tex
 ```
 
-`AW_Res.pdf` isn't tracked in git — it's a build output, not source. CI (`.github/workflows/build.yml`) compiles it on every push and pull request and attaches the result as a downloadable workflow artifact (Actions tab → latest run → Artifacts), so there's always a fresh copy without baking old versions into git history.
+`AW_Res.pdf` is auto-rebuilt and committed by CI (`.github/workflows/build.yml`) on every push, so it always reflects the latest `.tex` and is viewable directly in the repo.
