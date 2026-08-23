@@ -2,9 +2,9 @@ name: Build Resume
 
 on:
   push:
-    branches: [main]
+    branches: [develop]
     paths:
-      - "AW_Res.tex"
+      - "Avery_Wagner_Resume.tex"
       - "altacv.cls"
   workflow_dispatch:
 
@@ -20,10 +20,12 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: AW_Res.tex
+          root_file: Avery_Wagner_Resume.tex
 
-      - name: Commit updated PDF
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto-build resume PDF"
-          file_pattern: AW_Res.pdf
+      - name: Publish to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f Avery_Wagner_Resume.pdf
+          git commit -m "Publish build from GitHub Actions"
+          git push origin HEAD:main --force

@@ -15,7 +15,7 @@ Built on [AltaCV](https://github.com/liantze/AltaCV) by LianTze Lim.
 
 **Locally** (needs a LaTeX distribution with `latexmk`):
 ```sh
-latexmk -pdf AW_Res.tex
+latexmk -pdf Avery_Wagner_Resume.tex
 ```
 
-`AW_Res.pdf` is auto-rebuilt and committed by CI (`.github/workflows/build.yml`) on every push, so it always reflects the latest `.tex` and is viewable directly in the repo.
+`Avery_Wagner_Resume.pdf` is auto-rebuilt and committed by CI (`.github/workflows/build.yml`) on every push, so it always reflects the latest `.tex` and is viewable directly in the repo.
