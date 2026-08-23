@@ -1,5 +1,7 @@
 # resume
 
+[![Build Resume](https://github.com/avery-wagner/resume/actions/workflows/build.yml/badge.svg)](https://github.com/avery-wagner/resume/actions/workflows/build.yml)
+
 My resume, in LaTeX, version-controlled.
 
 Built on [AltaCV](https://github.com/liantze/AltaCV) by LianTze Lim.

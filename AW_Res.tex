@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Avery Wagner Resume — November 2025
+% Avery Wagner Resume — Last Updated: August 2026
 %
-% To compile:
+% To compile via Overleaf:
 %   1. Open Overleaf (https://www.overleaf.com/)
 %   2. Create a New Project → Blank Project → paste this file
 %   3. Click “Menu” → change paper size to “Letter”
@@ -46,8 +46,6 @@
 \newsavebox{\cvsectiontitlebox}
 \renewcommand{\namefont}{\bfseries\fontsize{20}{30}\selectfont}
 
-
-
 % ----- CUSTOM SECTION HEADER SIZE -----
 \newcommand{\cvsectionfontsize}{\bfseries\fontsize{16}{18}\selectfont}
 \newcommand{\cvsubsectionfontsize}{\fontsize{11}{12}\selectfont}
@@ -63,8 +61,6 @@
   % \vspace{6pt}  % spacing before header
   \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm} \emph{(#2)}\\
   {\MakeUppercase{#3}} \hspace{0.2cm}---\hspace{0.2cm}   #4
-  % \textbf{\MakeUppercase{#1}} --- (#2)\\
-  % \textcolor{subheading}{\textbf{#3}} — #4
   \vspace{4pt}  % spacing before bullet list
 }
 \newcommand{\education}[4]{
@@ -73,30 +69,15 @@
   % #3 = Degree info
   % #4 = GPA
   \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm}#3\hspace{0.2cm}--- \hspace{0.2cm}#4 \hspace{0.2cm}—\hspace{0.2cm}\emph{(#2)}
-  % \vspace{6pt}  % spacing before header
-  % \textcolor{subheading}{\MakeUppercase{#1}} \hspace{0.2cm}--- \hspace{0.2cm}(#2)\\
-  % \emph{#3} \hspace{0.2cm}—\hspace{0.2cm} \emph{#4}
-  % \textbf{\MakeUppercase{#1}} --- (#2)\\
-  % \textcolor{subheading}{\textbf{#3}} — #4
   \vspace{4pt}  % spacing before bullet list
 }
 
-% \renewcommand{\cvsectionstyle}[1]{
-%   {\cvsectionfont #1}
-% }
 \begin{document}
 
-% \renewcommand{\cvsection}[1]{%
-%   \vspace{0.4em}
-%   \sbox{\cvsectiontitlebox}{{\headingfont\bfseries\MakeUppercase{#1}}}%
-%   \noindent{\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\hspace{0.2cm}{\color{accent}\rule[0.5ex]{\dimexpr\linewidth-\wd\cvsectiontitlebox-0.2cm\relax}{0.4pt}}%
-%   \par\vspace{0.2em}
-% }
 
 \renewcommand{\cvsection}[1]{%
   \vspace{0.8em}
   {\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\\[-2pt]
-    % {\large\headingfont\bfseries\color{heading}\MakeUppercase{#1}}\\[-2pt]
   {\color{accent}\rule{\linewidth}{0.4pt}}%
   \vspace{0.4em}
 }
@@ -108,9 +89,6 @@
   % Name
   {\namefont\color{name}\MakeUppercase{Avery Wagner}}\\[4pt]
 
-  % Tagline (adjust size if you changed \tagline font)
-  % {\large\color{body} Computer Science Student \,|\, Software \& Robotics Enthusiast}\\[6pt]
-
   % Contact row (icons + links). If fontawesome isn't available, remove \fa* and keep plain text.
   {\small
     \faEnvelope\ \href{mailto:hi@averywagner.dev}{hi@averywagner.dev} \quad\textbullet\quad
@@ -119,60 +97,24 @@
   }
 \end{center}
 
-% \vspace{0.5em}
-% ---------------------------------------------------------------
-
-%--------------------------------------------------------------------
-% Header
-% --------------------------------------------------------------------
-% \columnratio{0.3}
-
-% Start two-column region
-% \begin{paracol}{2}
 
 % ---------------- LEFT COLUMN ----------------
-% \begin{leftcolumn}
-% \name{Avery Wagner}
-% \end{leftcolumn}
 
-% Switch to the right column
-% \switchcolumn
-% \tagline{Computer Science Student}
-% \personalinfo{
-%   \email{avery.wagner@colorado.edu}
-%   \phone{(720) 990-0375}
-%   \linkedin{linkedin.com/in/avery-wagner}
-%   \github{github.com/avery-wagner}
-% }
-
-
-% \makecvheader
-% End two-column region
-% \end{paracol}
 % SUMMARY
 \cvsection{SUMMARY}
 % \vspace{0.2em}
-Driven, creative, and adaptable student at CU graduating in May 2026 with a BA in Computer Science and a minor in Music. Incoming Robotics Engineering Intern at Lunar Outpost; previously at Axiom Space and Lunar Outpost developing mission-control software solutions. Passionate student of robotics and intelligent systems and experienced in industry-grade full-stack and UI/UX development. Committed advocate for tech ethics, green tech, and building tech for social good. Self-taught graphic designer and an ardent musician and artist. 
-% Driven, creative, and adaptable undergraduate student at CU Boulder pursuing a BA in Computer Science and a minor in Music. Seeking industry experience in robotics and embedded systems. Previous internships at Axiom Space and Lunar Outpost developing mission-control software solutions. Versatile problem-solver with experience in full-stack development, UI/UX, cloud computing, and data visualization. Passionate about robotics, cybersecurity, and operating systems.
-
-
+Driven, creative, and adaptable software engineer. Recently graduated from CU Boulder in May 2026 with a BA in Computer Science and a minor in Music. Currently a Robotics Engineering Intern at Lunar Outpost; previously at Axiom Space and Lunar Outpost developing mission-control software solutions. Passionate student of robotics and intelligent systems and experienced in industry-grade full-stack and UI/UX development. Committed advocate for tech ethics, green tech, and building tech for social good. Self-taught graphic designer and an ardent musician and artist.
 
 
 % EDUCATION
-% \cvevent{University of Colorado Boulder}{BA in Computer Science, Minor in Music}{Expected May 2026}{GPA: 3.4}
 \cvsection{EDUCATION}
 \education
   {University of Colorado Boulder}
   {Graduation May 2026}
-  % {BA in Computer Science, Minor in Music}
-  % {GPA: 3.4}
   {BA in Computer Science}
   {Minor in Music}
-  
+
 Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity, Operating Systems, Algorithms, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
-% Ongoing Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity.\\
-% \vspace{0.2cm}
-% Past Courses: Operating Systems, Algorithms, Discrete Structures, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
 
 %--------------------------------------------------------------------
 % COLUMN SETUP (robust two-column using paracol)
@@ -191,28 +133,18 @@ Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, P
 % SKILLS
 \cvsection{SKILLS}
 \cvsubsection{Programming Languages}
-% \cvsubsection{PROGRAMMING LANGUAGES}
 \cvtag{Python}\cvtag{TS/JS}\cvtag{C/C++}\cvtag{Scala}\cvtag{Julia}\cvtag{Bash}\cvtag{LaTeX}\cvtag{HTML/CSS}
 
 \divider
 
 \cvsubsection{Technologies}
-% \cvsubsection{TECHNOLOGIES}
 \cvtag{ROS2}\cvtag{OpenCV}\cvtag{YOLO}\cvtag{GAZEBO}\cvtag{React.js}\cvtag{Node.js}\cvtag{SQL}\cvtag{Postgres}\cvtag{GitHub}\cvtag{Docker}\cvtag{AWS}
 \cvtag{Linux}\cvtag{Kubernetes}\cvtag{CI/CD}\cvtag{DevOps}
-% \cvtag{Webots}
 
 \divider
 
 \cvsubsection{Design \& Other}
-% \cvsubsection{DESIGN \& OTHER}
 \cvtag{Photoshop}\cvtag{Illustrator}\cvtag{Figma}\cvtag{UI/UX}\cvtag{Excel}\cvtag{Word}\cvtag{PowerPoint}\cvtag{Ableton}
-
-% \divider
-
-% \cvsubsection{Skills in Development}
-% % \cvsubsection{SKILLS IN DEVELOPMENT}
-% \cvtag{GAZEBO}
 
 
 % PROJECTS
@@ -245,24 +177,6 @@ Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, P
 \switchcolumn
 
 % ---------------- RIGHT COLUMN ----------------
-
-% % EDUCATION
-% % \cvevent{University of Colorado Boulder}{BA in Computer Science, Minor in Music}{Expected May 2026}{GPA: 3.4}
-% \cvsection{EDUCATION}
-% \education
-%   {University of Colorado Boulder}
-%   {Graduation May 2026}
-%   % {BA in Computer Science, Minor in Music}
-%   % {GPA: 3.4}
-%   {BA in Computer Science}
-%   {Minor in Music}
-% Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity, Operating Systems, Algorithms, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
-% % Ongoing Coursework: Advanced Robotics, Computer Vision, Network Systems, Data Science, Programming Languages, Cybersecurity.\\
-% % \vspace{0.2cm}
-% % Past Courses: Operating Systems, Algorithms, Discrete Structures, Software Dev Methods, Numerical Computation, Linear Algebra, Physics II.
-
-% \divider
-% \vspace{0.8em}
 
 % EXPERIENCE
 \cvsection{WORK EXPERIENCE}
