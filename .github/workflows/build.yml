@@ -6,10 +6,11 @@ on:
     paths:
       - "AW_Res.tex"
       - "altacv.cls"
+  pull_request:
+    paths:
+      - "AW_Res.tex"
+      - "altacv.cls"
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   build:
@@ -22,8 +23,9 @@ jobs:
         with:
           root_file: AW_Res.tex
 
-      - name: Commit updated PDF
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload compiled PDF
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "Auto-build resume PDF"
-          file_pattern: AW_Res.pdf
+          name: resume-pdf
+          path: AW_Res.pdf
+          retention-days: 30
