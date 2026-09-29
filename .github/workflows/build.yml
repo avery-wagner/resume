@@ -29,3 +29,13 @@ jobs:
           git add -f Avery_Wagner_Resume.pdf
           git commit -m "Publish build from GitHub Actions"
           git push origin HEAD:main --force
+
+      - name: Notify portfolio to redeploy
+        env:
+          DISPATCH_TOKEN: ${{ secrets.PORTFOLIO_DISPATCH_TOKEN }}
+        run: |
+          curl -fsSL -X POST \
+            -H "Authorization: Bearer $DISPATCH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/avery-wagner/portfolio/dispatches \
+            -d '{"event_type":"resume-updated"}'
